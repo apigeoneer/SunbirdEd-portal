@@ -1,5 +1,21 @@
 @import "variables";
 @import "mixins/mixins";
+@import 'pages/mat-modal';
+
+.sb-modal-header .header-top .close-dialog .close-btn {
+    float: right;
+    border-radius: 50% !important;
+    box-shadow: var(--sbt-box-shadow-3px);
+    background-color: var(--white);
+    font-size: 0.875rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    outline: 0px;
+    border: 0;
+    /* margin: 1rem; */
+    color: red;
+}
 
 .sb-graph-section {
   position: relative;
@@ -90,6 +106,30 @@
       margin-top: calculateRem(8px);
     }
   }
+}
+
+.close-dialog {
+  margin: 0;
+  padding: 0;
+}
+
+.close.inside.icon{
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+  outline: 0px;
+  }
+
+.sb-modal-header {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 ::ng-deep {

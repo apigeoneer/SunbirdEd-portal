@@ -5,7 +5,15 @@
                 <div class="ui modal transition active visible normal">
                     <!--Header-->
                     <div class="sb-modal-header">
-                        <h4> {{resourceService.frmelmnts?.btn?.addEntity}} </h4>
+                        <div class="header-top">
+                            <h4> {{resourceService.frmelmnts?.btn?.addEntity}} </h4>
+                            <div mat-dialog-title class="close-dialog">
+                                <button aria-label="close dialog" mat-dialog-close class="close-btn" (click)="closeModal()">
+                                    <i class="close inside icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
                         <div class="sbt-search-box search-box">
                             <div class="input-div relative" id="search-input-container">
                                 <img src="assets/images/search-icon.svg" class="search icon" alt="Search Icon">

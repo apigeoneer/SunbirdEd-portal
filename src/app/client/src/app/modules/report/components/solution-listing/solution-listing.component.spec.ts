@@ -10,6 +10,8 @@ import {
 } from './solution-listing.component.spec.data';
 import { of as observableOf, throwError as observableThrowError, of, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 describe('SolutionListingComponent', () => {
   let component: SolutionListingComponent;
   const mockConfigService: Partial<ConfigService> = {};
@@ -76,7 +78,10 @@ describe('SolutionListingComponent', () => {
     }) as any
   };
   const mockNavigationHelperService: Partial<NavigationHelperService> = {
-    goBack: () => {}
+    goBack: () => { }
+  };
+  const locationStub: Partial<Location> = {
+    back: jasmine.createSpy('back')
   };
   beforeEach(() => {
     component = new SolutionListingComponent(
@@ -90,7 +95,8 @@ describe('SolutionListingComponent', () => {
       mockPaginationService as PaginationService,
       mockConfigService as ConfigService,
       mockTncService as TncService,
-      mockNavigationHelperService as NavigationHelperService
+      mockNavigationHelperService as NavigationHelperService,
+      locationStub as Location
     );
   });
   it('should create', () => {

@@ -238,9 +238,17 @@
     <div class="sb-modal">
       <div class="transition ui dimmer page modals active visible">
         <div class="ui modal transition active visible normal">
+
           <div class="sb-modal-header">
-            <h4>{{segmentValue =='Questions' ? (resourceService?.frmelmnts?.lbl?.selectquestionfilter) :
+            <div class="header-top">
+              <h4>{{segmentValue =='Questions' ? (resourceService?.frmelmnts?.lbl?.selectquestionfilter) :
               (resourceService?.frmelmnts?.lbl?.selectcriteriafilter) }}</h4>
+              <div mat-dialog-title class="close-dialog">
+                <button aria-label="close dialog" mat-dialog-close class="close-btn" (click)="closeModal()">
+                  <i class="close inside icon"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="sb-modal-content content">
             <div *ngFor="let question of modalFilterData">
